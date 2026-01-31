@@ -1,31 +1,31 @@
-[gd_scene load_steps=4 format=3 uid="uid://d36vhmh2po56y"]
+[gd_scene format=3 uid="uid://d36vhmh2po56y"]
 
-[ext_resource type="Texture2D" uid="uid://bqp7naqr4nlk5" path="res://graphics/player/player.png" id="1_ft4c0"]
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_i6jq0"]
+[ext_resource type="Script" uid="uid://dqqp6lmj05w68" path="res://scenes/player/player.gd" id="1_i6jq0"]
+[ext_resource type="Texture2D" uid="uid://bqp7naqr4nlk5" path="res://assets/graphics/player/player.png" id="2_dovo2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdhsk"]
 radius = 49.8197
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=276882780]
 script = ExtResource("1_i6jq0")
 
-[node name="PlayerImage" type="Sprite2D" parent="."]
+[node name="PlayerImage" type="Sprite2D" parent="." unique_id=711414491]
 position = Vector2(47, 5)
 rotation = 1.5708
-texture = ExtResource("1_ft4c0")
+texture = ExtResource("2_dovo2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1745159648]
 shape = SubResource("CircleShape2D_xdhsk")
 
-[node name="GrenadeTimer" type="Timer" parent="."]
+[node name="GrenadeTimer" type="Timer" parent="." unique_id=490536420]
 
-[node name="ShootTimer" type="Timer" parent="."]
+[node name="ShootTimer" type="Timer" parent="." unique_id=1442089314]
 wait_time = 0.1
 
-[node name="GunRear" type="Marker2D" parent="."]
+[node name="GunRear" type="Marker2D" parent="." unique_id=91676283]
 position = Vector2(27, 25)
 
-[node name="GunTip" type="Marker2D" parent="."]
+[node name="GunTip" type="Marker2D" parent="." unique_id=1355991580]
 position = Vector2(144, 25)
 
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
