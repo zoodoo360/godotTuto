@@ -25,19 +25,22 @@ func _process(_delta):
 	checkInputs()
 	
 	
-func _physics_process(_delta):
+func _physics_process(delta):
 	moveCharacter()
-	characterRotation()
+	characterRotation(delta)
 
 
 func moveCharacter():
 	velocity =  moveSpeed * moveDirection
 	move_and_slide()
 
-func characterRotation():
+func characterRotation(delta):
 	if aimDirection!= Vector2.ZERO:
-		var theta = wrapf(atan2(aimDirection.y, aimDirection.x) - rotation, -PI, PI)
-		rotation += clamp(rotationSpeed, 0, abs(theta)) * sign(theta)
+		look_at(global_position + aimDirection)
+		#var angleTo = transform.x.angle_to(aimDirection)
+		#rotate(sign(angleTo) * min (delta * rotationSpeed, abs(angleTo)))
+		#var theta = wrapf(atan2(aimDirection.y, aimDirection.x) - rotation, -PI, PI)
+		#rotation += clamp(rotationSpeed, 0, abs(theta)) * sign(theta)
 
 
 func checkInputs():
@@ -70,12 +73,11 @@ func aimDirectionInputs():
 func playerShoot():
 	if (Input.is_action_pressed("mouseShoot") or Input.is_action_pressed("controllerShoot")) and canShootBullet:
 		var shootingDirection: Vector2 = ($GunTip.global_position - $GunRear.global_position).normalized()
-		var laser:Laser = Laser.createInstance($GunTip.global_position, shootingDirection, $GunTip.global_rotation)
+		var laser:Laser = Laser.createInstance($GunTip.global_position, shootingDirection)
 		laser.global_transform = $GunTip.global_transform
 		add_child(laser)
 		canShootBullet = false
 		$ShootTimer.start()
-		
 func grenadeOut():
 	if (Input.is_action_pressed("mouseGrenade") or Input.is_action_pressed("controllerGrenade")) and canShootGrenade:
 		canShootGrenade = false
