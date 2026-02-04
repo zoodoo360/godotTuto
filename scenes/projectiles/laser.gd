@@ -1,16 +1,17 @@
 class_name Laser extends Area2D
 
 const laser_scene : PackedScene = preload("res://scenes/projectiles/laser.tscn")
-var direction: Vector2 = Vector2.ZERO
+var direction: Vector2 = Vector2.RIGHT
 @export var speed:float = 1.0
 
 func _physics_process(delta):
 	movelaser(delta)
 
-static func createInstance(spawnPosition:Vector2, spawnDirection:Vector2) ->Laser:
+static func createInstance(spawnPosition:Vector2, spawnDirection:Vector2, spawnTransform:Transform2D) ->Laser:
 	var laser: Laser = laser_scene.instantiate() as Laser
 	laser.position = spawnPosition
 	laser.direction = spawnDirection
+	laser.transform = spawnTransform
 	laser.top_level = true
 	return laser
 	

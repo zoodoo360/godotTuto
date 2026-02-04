@@ -23,11 +23,12 @@ shape = SubResource("CircleShape2D_xdhsk")
 [node name="ShootTimer" type="Timer" parent="." unique_id=1442089314]
 wait_time = 0.1
 
-[node name="GunRear" type="Marker2D" parent="." unique_id=91676283]
-position = Vector2(29, 20)
-
 [node name="GunTip" type="Marker2D" parent="." unique_id=1355991580]
 position = Vector2(146, 20)
+
+[node name="GrenadePouch" type="Node2D" parent="." unique_id=1298496319]
+
+[node name="Clip" type="Node2D" parent="." unique_id=917503698]
 
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
