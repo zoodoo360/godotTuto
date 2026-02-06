@@ -1,17 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwlcr2d3xgpcx"]
+[gd_scene format=3 uid="uid://cwlcr2d3xgpcx"]
 
-[ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_cmnwa"]
+[ext_resource type="Script" uid="uid://dmyc7w63744qs" path="res://scenes/levels/level.gd" id="1_cmnwa"]
 [ext_resource type="PackedScene" uid="uid://dwhm0i20rmh1f" path="res://scenes/objects/gate.tscn" id="2_xo8jy"]
 [ext_resource type="PackedScene" uid="uid://d36vhmh2po56y" path="res://scenes/player/player.tscn" id="4_giuic"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" unique_id=1977749430]
 script = ExtResource("1_cmnwa")
 
-[node name="Gate" parent="." instance=ExtResource("2_xo8jy")]
+[node name="Gate" parent="." unique_id=1634038909 instance=ExtResource("2_xo8jy")]
 position = Vector2(364, -817)
 
-[node name="Player" parent="." instance=ExtResource("4_giuic")]
+[node name="Player" parent="." unique_id=1810333965 instance=ExtResource("4_giuic")]
 position = Vector2(474, 451)
+moveSpeed = null
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_exited_gate" from="Gate" to="." method="_on_gate_player_exited_gate"]

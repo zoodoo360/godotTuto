@@ -47,9 +47,9 @@ func shootLaser() -> void:
 	$ShootTimer.start()
 
 func shootGrenade() -> void:
-	var grenade:Grenade = Grenade.createInstance($GunTip.global_position, aimDirection)
-	grenade.global_transform = $GunTip.global_transform
+	var grenade:Grenade = Grenade.createInstance($GunTip.global_position, aimDirection, $GunTip.global_transform)
 	$GrenadePouch.add_child(grenade)
+	print(grenade.linear_velocity)
 	canShootGrenade = false
 	$GrenadeTimer.start()
 

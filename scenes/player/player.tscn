@@ -30,5 +30,9 @@ position = Vector2(146, 20)
 
 [node name="Clip" type="Node2D" parent="." unique_id=917503698]
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1930404288]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]
 [connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]
