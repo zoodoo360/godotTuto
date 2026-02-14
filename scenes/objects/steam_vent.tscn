@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bn2ohwgqs463f"]
+
+[ext_resource type="Texture2D" uid="uid://dg362uqnt6vxq" path="res://assets/graphics/objects/ventilation_hole.png" id="1_tsb1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2mcvv"]
+radius = 89.140335
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_f0qoe"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
+[node name="SteamVent" type="StaticBody2D" unique_id=864225112]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1857681710]
+shape = SubResource("CircleShape2D_2mcvv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=404273013]
+texture = ExtResource("1_tsb1a")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1310941584]
+process_material = SubResource("ParticleProcessMaterial_f0qoe")

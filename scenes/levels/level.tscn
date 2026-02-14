@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://be2lk1e008cmf" path="res://assets/graphics/tilesets/outside_walls.png" id="9_7pb6i"]
 [ext_resource type="Texture2D" uid="uid://dali1gbdgxouu" path="res://assets/graphics/tilesets/soil.png" id="9_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://t7hb5rchvgxa" path="res://scenes/houses/house.tscn" id="11_qogh7"]
+[ext_resource type="PackedScene" uid="uid://b2j78yx2cl57s" path="res://scenes/enemies/drone.tscn" id="14_8iyoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qogh7"]
 texture = ExtResource("9_xfk5q")
@@ -56,7 +57,7 @@ script = ExtResource("1_cmnwa")
 
 [node name="Soil" type="Sprite2D" parent="Ground" unique_id=411427581]
 texture_repeat = 2
-position = Vector2(-1208.9996, 4346)
+position = Vector2(-1204.9995, 4346)
 scale = Vector2(1.399091, 1.7784001)
 texture = ExtResource("2_xb4v1")
 region_enabled = true
@@ -103,7 +104,10 @@ rotation = -1.865757
 position = Vector2(364, -817)
 
 [node name="Player" parent="." unique_id=1810333965 instance=ExtResource("4_giuic")]
-position = Vector2(474, 451)
+position = Vector2(-4691, 4135)
+
+[node name="Drone" parent="." unique_id=541355805 instance=ExtResource("14_8iyoh")]
+position = Vector2(127, 540)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_exited_gate" from="Gate" to="." method="_on_gate_player_exited_gate"]
