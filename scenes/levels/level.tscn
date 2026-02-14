@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://be2lk1e008cmf" path="res://assets/graphics/tilesets/outside_walls.png" id="9_7pb6i"]
 [ext_resource type="Texture2D" uid="uid://dali1gbdgxouu" path="res://assets/graphics/tilesets/soil.png" id="9_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://t7hb5rchvgxa" path="res://scenes/houses/house.tscn" id="11_qogh7"]
+[ext_resource type="PackedScene" uid="uid://bn2ohwgqs463f" path="res://scenes/objects/steamVent.tscn" id="12_mq31s"]
 [ext_resource type="PackedScene" uid="uid://b2j78yx2cl57s" path="res://scenes/enemies/drone.tscn" id="14_8iyoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qogh7"]
@@ -100,11 +101,14 @@ tile_set = SubResource("TileSet_qogh7")
 position = Vector2(-6235, 6542)
 rotation = -1.865757
 
+[node name="SteamVent" parent="Ground" unique_id=864225112 instance=ExtResource("12_mq31s")]
+position = Vector2(642, 517)
+
 [node name="Gate" parent="." unique_id=1634038909 instance=ExtResource("2_xo8jy")]
 position = Vector2(364, -817)
 
 [node name="Player" parent="." unique_id=1810333965 instance=ExtResource("4_giuic")]
-position = Vector2(-4691, 4135)
+position = Vector2(401, 360)
 
 [node name="Drone" parent="." unique_id=541355805 instance=ExtResource("14_8iyoh")]
 position = Vector2(127, 540)

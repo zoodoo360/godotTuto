@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dqqp6lmj05w68" path="res://scenes/player/player.gd" id="1_i6jq0"]
 [ext_resource type="Texture2D" uid="uid://bqp7naqr4nlk5" path="res://assets/graphics/player/player.png" id="2_dovo2"]
+[ext_resource type="Texture2D" uid="uid://d3g6q6krdu0ah" path="res://assets/graphics/decals/white.png" id="3_gmlin"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdhsk"]
 radius = 56.008926
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lvxji"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 11.8
+spread = 15.0
+initial_velocity_min = 20.0
+initial_velocity_max = 30.0
+gravity = Vector3(0, 0, 0)
+color = Color(0.5803922, 0.972549, 1, 0.20392157)
 
 [node name="Player" type="CharacterBody2D" unique_id=276882780]
 collision_mask = 31
@@ -26,6 +37,14 @@ wait_time = 0.1
 
 [node name="GunTip" type="Marker2D" parent="." unique_id=1355991580]
 position = Vector2(146, 20)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1618760879]
+position = Vector2(146, 19)
+emitting = false
+texture = ExtResource("3_gmlin")
+lifetime = 0.2
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_lvxji")
 
 [node name="GrenadePouch" type="Node2D" parent="." unique_id=1298496319]
 

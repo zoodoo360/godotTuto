@@ -42,6 +42,7 @@ func characterRotation():
 
 func shootLaser() -> void:
 	var laser:Laser = Laser.createInstance($GunTip.global_position, aimDirection, $GunTip.global_transform)
+	$GPUParticles2D.emitting = true
 	$Clip.add_child(laser)
 	canShootBullet = false
 	$ShootTimer.start()
