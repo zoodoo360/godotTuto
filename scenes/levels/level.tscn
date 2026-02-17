@@ -108,10 +108,14 @@ position = Vector2(642, 517)
 position = Vector2(364, -817)
 
 [node name="Player" parent="." unique_id=1810333965 instance=ExtResource("4_giuic")]
-position = Vector2(401, 360)
+position = Vector2(353, 346)
 
 [node name="Drone" parent="." unique_id=541355805 instance=ExtResource("14_8iyoh")]
 position = Vector2(127, 540)
+
+[node name="Moon" type="DirectionalLight2D" parent="." unique_id=383553698]
+energy = 0.35
+blend_mode = 1
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_exited_gate" from="Gate" to="." method="_on_gate_player_exited_gate"]
