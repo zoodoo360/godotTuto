@@ -230,27 +230,41 @@ tile_set = SubResource("TileSet_nwqdy")
 [node name="BlueNeon" parent="." unique_id=1694108521 instance=ExtResource("2_b1fwh")]
 position = Vector2(2455, 187)
 rotation = 1.5707964
+collision_layer = 4
+collision_mask = 11
 
 [node name="BlueNeon2" parent="." unique_id=847834331 instance=ExtResource("2_b1fwh")]
 position = Vector2(-1283, 248)
 rotation = -1.5707964
+collision_layer = 4
+collision_mask = 11
 
 [node name="BlueNeon4" parent="." unique_id=351635676 instance=ExtResource("2_b1fwh")]
 position = Vector2(-120, 620)
+collision_layer = 4
+collision_mask = 11
 
 [node name="BlueNeon3" parent="." unique_id=213685633 instance=ExtResource("2_b1fwh")]
 position = Vector2(-559, 1672)
 rotation = -3.1415927
+collision_layer = 4
+collision_mask = 11
 
 [node name="Lamp" parent="." unique_id=1900687327 instance=ExtResource("3_nwqdy")]
 position = Vector2(2444, 1177)
 rotation = 1.5707964
 scale = Vector2(0.3, 0.3)
+collision_layer = 4
+collision_mask = 11
 
 [node name="Lamp2" parent="." unique_id=1354353269 instance=ExtResource("3_nwqdy")]
 position = Vector2(959, -152)
 scale = Vector2(0.3, 0.3)
+collision_layer = 4
+collision_mask = 11
 
 [node name="Lamp3" parent="." unique_id=1964980235 instance=ExtResource("3_nwqdy")]
 position = Vector2(769, 1675)
 scale = Vector2(0.3, 0.3)
+collision_layer = 4
+collision_mask = 11

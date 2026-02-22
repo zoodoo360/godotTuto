@@ -62,7 +62,7 @@ process_material = SubResource("ParticleProcessMaterial_lvxji")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1930404288]
 visible = false
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.1, 0.1)
 position_smoothing_enabled = true
 
 [node name="PlayerShadow" type="LightOccluder2D" parent="." unique_id=762596790]

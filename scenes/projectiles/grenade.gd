@@ -14,5 +14,8 @@ static func createInstance(spawnPosition:Vector2, spawnDirection:Vector2, spawnT
 	grenade.linear_velocity = grenade.direction * grenade.speed
 	grenade.top_level = true
 	return grenade
+	
+func explode():
+	$AnimationPlayer.play("Explosion")
 
 	
