@@ -60,11 +60,6 @@ process_material = SubResource("ParticleProcessMaterial_lvxji")
 
 [node name="Clip" type="Node2D" parent="." unique_id=917503698]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1930404288]
-visible = false
-zoom = Vector2(0.1, 0.1)
-position_smoothing_enabled = true
-
 [node name="PlayerShadow" type="LightOccluder2D" parent="." unique_id=762596790]
 occluder = SubResource("OccluderPolygon2D_gmlin")
 

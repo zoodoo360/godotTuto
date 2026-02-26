@@ -8,11 +8,12 @@ var isShooting: bool
 var canShootBullet: bool
 var canShootGrenade: bool
 
-
-@export var moveSpeed: float = 500
+@export var maxSpeed: float = 500
+var moveSpeed: float = 500
 
 
 func _ready():
+	moveSpeed = maxSpeed
 	moveDirection = Vector2.ZERO
 	characterPosition = Vector2.ZERO
 	aimDirection = Vector2.RIGHT

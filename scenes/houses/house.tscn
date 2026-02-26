@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://t7hb5rchvgxa"]
 
 [ext_resource type="Texture2D" uid="uid://brd1l1yw8x4df" path="res://assets/graphics/tilesets/interior.png" id="1_i7cyq"]
+[ext_resource type="Script" uid="uid://dxpbfi3qmvksp" path="res://scenes/houses/house.gd" id="1_wmlim"]
 [ext_resource type="PackedScene" uid="uid://davqswfayc0wv" path="res://scenes/objects/neonLight.tscn" id="2_b1fwh"]
 [ext_resource type="PackedScene" uid="uid://bcn0def76obwt" path="res://scenes/objects/lamp.tscn" id="3_nwqdy"]
 
@@ -204,11 +205,13 @@ texture_region_size = Vector2i(390, 390)
 [sub_resource type="TileSet" id="TileSet_nwqdy"]
 tile_size = Vector2i(390, 390)
 occlusion_layer_0/light_mask = 1
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 15
 sources/0 = SubResource("TileSetAtlasSource_b1fwh")
 
 [node name="House" type="Area2D" unique_id=1512213927]
 collision_layer = 16
+script = ExtResource("1_wmlim")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=858280555]
 position = Vector2(587, 588)
@@ -268,3 +271,6 @@ position = Vector2(769, 1675)
 scale = Vector2(0.3, 0.3)
 collision_layer = 4
 collision_mask = 11
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
