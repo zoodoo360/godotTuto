@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="TutoShooter"
-run/main_scene="res://scenes/levels/level.tscn"
+run/main_scene="uid://wi5ymxxkh2g6"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 

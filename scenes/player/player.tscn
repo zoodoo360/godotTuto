@@ -33,8 +33,10 @@ rotation = 1.5707964
 texture = ExtResource("2_dovo2")
 
 [node name="GunCollision" type="CollisionShape2D" parent="." unique_id=2008201576]
+visible = false
 position = Vector2(107, 19)
 shape = SubResource("RectangleShape2D_gmlin")
+metadata/_edit_lock_ = true
 
 [node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=1745159648]
 position = Vector2(11, -1)
@@ -46,7 +48,7 @@ shape = SubResource("CircleShape2D_xdhsk")
 wait_time = 0.1
 
 [node name="GunTip" type="Marker2D" parent="." unique_id=1355991580]
-position = Vector2(146, 20)
+position = Vector2(147, 19)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1618760879]
 position = Vector2(146, 19)
@@ -55,12 +57,10 @@ texture = ExtResource("3_gmlin")
 lifetime = 0.2
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_lvxji")
-
-[node name="GrenadePouch" type="Node2D" parent="." unique_id=1298496319]
-
-[node name="Clip" type="Node2D" parent="." unique_id=917503698]
+metadata/_edit_lock_ = true
 
 [node name="PlayerShadow" type="LightOccluder2D" parent="." unique_id=762596790]
+visible = false
 occluder = SubResource("OccluderPolygon2D_gmlin")
 
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_grenade_timer_timeout"]

@@ -6,13 +6,11 @@ var direction: Vector2 = Vector2.ZERO
 @export var speed:float = 1.0
 
 
-static func createInstance(spawnPosition:Vector2, spawnDirection:Vector2, spawnTransform:Transform2D) ->Grenade:
+static func createInstance(spawnTransform:Transform2D, spawnDirection:Vector2) ->Grenade:
 	var grenade: Grenade = grenade_scene.instantiate() as Grenade
-	grenade.position = spawnPosition
 	grenade.direction = spawnDirection
 	grenade.transform = spawnTransform
 	grenade.linear_velocity = grenade.direction * grenade.speed
-	grenade.top_level = true
 	return grenade
 	
 func explode():

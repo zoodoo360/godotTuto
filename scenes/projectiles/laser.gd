@@ -10,12 +10,10 @@ func _ready():
 func _physics_process(delta):
 	movelaser(delta)
 
-static func createInstance(spawnPosition:Vector2, spawnDirection:Vector2, spawnTransform:Transform2D) ->Laser:
+static func createInstance(spawnTransform:Transform2D, spawnDirection:Vector2) ->Laser:
 	var laser: Laser = laser_scene.instantiate() as Laser
-	laser.position = spawnPosition
-	laser.direction = spawnDirection
 	laser.transform = spawnTransform
-	laser.top_level = true
+	laser.direction = spawnDirection
 	return laser
 	
 func movelaser(delta):

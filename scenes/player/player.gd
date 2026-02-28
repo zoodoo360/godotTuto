@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal projectile_shot(gunTransform:Transform2D, gunDirection:Vector2)
+signal grenade_shot(gunTransform:Transform2D, gunDirection:Vector2)
+
 var characterPosition: Vector2
 var moveDirection: Vector2
 var aimDirection: Vector2
@@ -24,8 +27,7 @@ func _ready():
 
 func _process(_delta):
 	checkInputs()
-	
-	
+
 func _physics_process(_delta):
 	moveCharacter()
 
@@ -42,15 +44,13 @@ func characterRotation():
 		#rotation += clamp(rotationSpeed, 0, abs(theta)) * sign(theta)
 
 func shootLaser() -> void:
-	var laser:Laser = Laser.createInstance($GunTip.global_position, aimDirection, $GunTip.global_transform)
+	projectile_shot.emit($GunTip.global_transform, aimDirection)
 	$GPUParticles2D.emitting = true
-	$Clip.add_child(laser)
 	canShootBullet = false
 	$ShootTimer.start()
 
 func shootGrenade() -> void:
-	var grenade:Grenade = Grenade.createInstance($GunTip.global_position, aimDirection, $GunTip.global_transform)
-	$GrenadePouch.add_child(grenade)
+	grenade_shot.emit($GunTip.global_transform, aimDirection)
 	canShootGrenade = false
 	$GrenadeTimer.start()
 
@@ -81,9 +81,8 @@ func aimDirectionInputs():
 	characterRotation()
 
 func laserInput():
-	if canShootBullet:
-		if (Input.is_action_pressed("mouseShoot") or Input.is_action_pressed("controllerShoot")):
-			shootLaser()
+	if (Input.is_action_pressed("mouseShoot") or Input.is_action_pressed("controllerShoot")) and canShootBullet:
+		shootLaser()
 
 func grenadeInput():
 	if (Input.is_action_pressed("mouseGrenade") or Input.is_action_pressed("controllerGrenade")) and canShootGrenade:

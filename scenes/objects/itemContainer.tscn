@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://jhd85rmo1s3e"]
+
+[ext_resource type="Script" uid="uid://jidlvc8hu2r3" path="res://scripts/item_container.gd" id="1_avxp8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avxp8"]
+
+[node name="ItemContainer" type="StaticBody2D" unique_id=1180036368]
+script = ExtResource("1_avxp8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1229924677]
+position = Vector2(2.25, 0)
+shape = SubResource("CircleShape2D_avxp8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1011652850]

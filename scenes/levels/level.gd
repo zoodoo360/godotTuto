@@ -1,4 +1,5 @@
-extends Node2D
+class_name LevelParent extends Node2D
+
 
 func _ready():
 	pass
@@ -6,15 +7,11 @@ func _ready():
 func _process(_delta):
 	pass
 
-func _on_gate_player_entered_gate():
-	print("I'm in")
-
-func _on_gate_player_exited_gate():
-	print("Not today")
-
-func _on_house_player_entered():
-	create_tween().tween_property($Player/PlayerCam, "zoom", Vector2(1, 1), 1)
+func _on_player_projectile_shot(gunTransform:Transform2D, gunDirection:Vector2):
+	var laser:Laser = Laser.createInstance(gunTransform, gunDirection)
+	$Clip.add_child(laser)
 
 
-func _on_house_player_exited():
-	create_tween().tween_property($Player/PlayerCam, "zoom", Vector2(0.5, 0.5), 1)
+func _on_player_grenade_shot(gunTransform, gunDirection):
+	var grenade:Grenade = Grenade.createInstance(gunTransform, gunDirection)
+	$GrenadePouch.add_child(grenade)

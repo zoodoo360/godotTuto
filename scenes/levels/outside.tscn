@@ -1,0 +1,136 @@
+[gd_scene format=4 uid="uid://wi5ymxxkh2g6"]
+
+[ext_resource type="PackedScene" uid="uid://cwlcr2d3xgpcx" path="res://scenes/levels/level.tscn" id="1_2s4ok"]
+[ext_resource type="Texture2D" uid="uid://cq2a5cfw0gmv2" path="res://assets/graphics/ground/stones.png" id="2_qvsb0"]
+[ext_resource type="Script" uid="uid://d07bsg73s0mjv" path="res://scripts/outside.gd" id="2_x30qc"]
+[ext_resource type="Texture2D" uid="uid://1kj8jvb5mled" path="res://assets/graphics/decals/dirt_patch.png" id="3_xqqjy"]
+[ext_resource type="Texture2D" uid="uid://d3jlk1e4wedrb" path="res://assets/graphics/decals/moss/moss_1.png" id="4_ex6t8"]
+[ext_resource type="Texture2D" uid="uid://dxt4bbdnd8jpa" path="res://assets/graphics/decals/moss/moss_2.png" id="5_x30qc"]
+[ext_resource type="Texture2D" uid="uid://b6edsam8ywm3q" path="res://assets/graphics/decals/moss/moss_4.png" id="6_uaeil"]
+[ext_resource type="Texture2D" uid="uid://cwja7ghgqg6xf" path="res://assets/graphics/decals/moss/moss_5.png" id="7_bjulg"]
+[ext_resource type="Texture2D" uid="uid://hiq5e8ooepk7" path="res://assets/graphics/decals/moss/moss_3.png" id="8_gd7nx"]
+[ext_resource type="Texture2D" uid="uid://dali1gbdgxouu" path="res://assets/graphics/tilesets/soil.png" id="9_4lnny"]
+[ext_resource type="Texture2D" uid="uid://be2lk1e008cmf" path="res://assets/graphics/tilesets/outside_walls.png" id="10_cnio0"]
+[ext_resource type="PackedScene" uid="uid://t7hb5rchvgxa" path="res://scenes/houses/house.tscn" id="11_6u4a0"]
+[ext_resource type="PackedScene" uid="uid://bn2ohwgqs463f" path="res://scenes/objects/steamVent.tscn" id="12_oe17f"]
+[ext_resource type="PackedScene" uid="uid://cnu4yptv4qwcq" path="res://scenes/objects/lighFanAnimation.tscn" id="13_lbwx5"]
+[ext_resource type="PackedScene" uid="uid://dwhm0i20rmh1f" path="res://scenes/objects/gate.tscn" id="14_xqqjy"]
+[ext_resource type="PackedScene" uid="uid://b2j78yx2cl57s" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
+[ext_resource type="PackedScene" uid="uid://b7wpfj273xwue" path="res://scenes/objects/toilet.tscn" id="17_bjulg"]
+[ext_resource type="PackedScene" uid="uid://diefd8ol2iqqc" path="res://scenes/objects/crate.tscn" id="18_gd7nx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddemh"]
+texture = ExtResource("9_4lnny")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vkmey"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_ddemh")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ngmq"]
+texture = ExtResource("10_cnio0")
+texture_region_size = Vector2i(390, 390)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4jce7"]
+tile_size = Vector2i(390, 390)
+sources/0 = SubResource("TileSetAtlasSource_2ngmq")
+
+[node name="Outside" unique_id=1977749430 instance=ExtResource("1_2s4ok")]
+script = ExtResource("2_x30qc")
+
+[node name="Soil" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="0" unique_id=2070634728]
+texture_repeat = 2
+position = Vector2(-1231.0001, 4342)
+scale = Vector2(1.399091, 1.7784001)
+texture = ExtResource("2_qvsb0")
+region_enabled = true
+region_rect = Rect2(-6011.928, -3428.947, 22000, 10000)
+
+[node name="Decoration" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="1" unique_id=297382985]
+modulate = Color(0.8862745, 0.8509804, 0.4117647, 1)
+position = Vector2(-176, 1164)
+texture = ExtResource("3_xqqjy")
+
+[node name="Moss1" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="2" unique_id=973233466]
+position = Vector2(1261, 515)
+texture = ExtResource("4_ex6t8")
+
+[node name="Moss2" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="3" unique_id=155819982]
+position = Vector2(-968, 414)
+texture = ExtResource("5_x30qc")
+
+[node name="Moss4" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="4" unique_id=1640468626]
+position = Vector2(1559, 975)
+texture = ExtResource("6_uaeil")
+
+[node name="Moss5" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="5" unique_id=755019970]
+position = Vector2(922, 1253)
+texture = ExtResource("7_bjulg")
+
+[node name="Moss3" type="Sprite2D" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="6" unique_id=862812720]
+position = Vector2(-83, 454)
+texture = ExtResource("8_gd7nx")
+
+[node name="Soil2" type="TileMapLayer" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="7" unique_id=760743350]
+tile_map_data = PackedByteArray("AAD8/wIAAAAAAAAAAAD9/wIAAAACAAAAAAD9/wMAAAACAAIAAAD8/wMAAAAAAAIAAAAFAAUAAAAAAAAAAAAGAAUAAAABAAAAAAAHAAUAAAACAAAAAAAGAAYAAAABAAEAAAAFAAYAAAAAAAEAAAAHAAYAAAACAAEAAAAFAAcAAAAAAAIAAAAGAAcAAAABAAIAAAAHAAcAAAACAAIAAAD7////AAAAAAEAAAD8////AAABAAEAAAD8/wAAAAABAAIAAAD9////AAABAAEAAAD9/wAAAAACAAIAAAD7/wAAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_vkmey")
+
+[node name="Wall" type="TileMapLayer" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="8" unique_id=1756835073]
+tile_map_data = PackedByteArray("AAAFAP//AAAAAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAD9////AAACAAAAAAD8////AAABAAAAAAD7////AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAABAAAAAAALAP//AAABAAAAAAAMAP//AAABAAAAAAARAP//AAABAAAAAAAQAP//AAABAAAAAAAPAP//AAABAAAAAAASAP//AAABAAAAAAATAP//AAABAAAAAAAUAP//AAABAAAAAAANAP//AAABAAAAAAAOAP//AAABAAAAAAAVAP//AAABAAAAAAAWAP//AAABAAAAAAAXAP//AAACAAEAAAAXAAAAAAAAAAIAAAAXAAEAAAAAAAIAAAAXAAIAAAAAAAIAAAAXAAMAAAAAAAIAAAAXAAQAAAAAAAIAAAAXAAUAAAAAAAIAAAAXAAYAAAAAAAIAAAAXAAoAAAAAAAIAAAAXAAsAAAAAAAIAAAAXAAwAAAAAAAIAAAAXAAkAAAAAAAIAAAAXAAgAAAAAAAIAAAAXAAcAAAAAAAIAAAAXAA0AAAAAAAIAAAAXAA4AAAAAAAIAAAAXAA8AAAAAAAIAAAAXABAAAAAAAAIAAAAXABMAAAAAAAIAAAAXABQAAAAAAAIAAAAXABEAAAAAAAIAAAAXABIAAAAAAAIAAAAXABUAAAACAAIAAAAWABUAAAABAAAAAAAVABUAAAABAAAAAAAUABUAAAABAAAAAAATABUAAAABAAAAAAASABUAAAABAAAAAAARABUAAAABAAAAAAAQABUAAAABAAAAAAAPABUAAAABAAAAAAAOABUAAAABAAAAAAANABUAAAABAAAAAAAMABUAAAABAAAAAAALABUAAAABAAAAAAAKABUAAAABAAAAAAAJABUAAAABAAAAAAAIABUAAAABAAAAAAAHABUAAAABAAAAAAAGABUAAAABAAAAAAAFABUAAAABAAAAAAD6////AAABAAAAAAD5////AAABAAAAAAD4////AAABAAAAAAD3////AAABAAAAAAD2////AAABAAAAAAD1////AAABAAAAAAD0////AAABAAAAAADz////AAABAAAAAADy////AAABAAAAAADx////AAABAAAAAADw////AAABAAAAAADv////AAABAAAAAADu////AAABAAAAAADt////AAABAAAAAADs////AAABAAAAAADr////AAABAAEAAADr/wAAAAAAAAIAAADr/wEAAAAAAAIAAADr/wIAAAAAAAIAAADr/wMAAAAAAAIAAADr/wQAAAAAAAIAAADr/wUAAAAAAAIAAADr/wYAAAAAAAIAAADr/wcAAAAAAAIAAADr/wgAAAAAAAIAAADr/wkAAAAAAAIAAADr/woAAAAAAAIAAADr/wsAAAAAAAIAAADr/wwAAAAAAAIAAADr/w0AAAAAAAIAAADr/w4AAAAAAAIAAADr/w8AAAAAAAIAAADr/xAAAAAAAAIAAADr/xEAAAAAAAIAAADr/xIAAAAAAAIAAADr/xMAAAAAAAIAAADr/xQAAAAAAAIAAADr/xUAAAABAAIAAADs/xUAAAABAAAAAADt/xUAAAABAAAAAADu/xUAAAABAAAAAADv/xUAAAABAAAAAADw/xUAAAABAAAAAADx/xUAAAABAAAAAAAAABUAAAABAAAAAAABABUAAAABAAAAAAACABUAAAABAAAAAAADABUAAAABAAAAAAAEABUAAAABAAAAAAD//xUAAAABAAAAAAD+/xUAAAABAAAAAAD9/xUAAAABAAAAAAD8/xUAAAABAAAAAAD7/xUAAAABAAAAAAD6/xUAAAABAAAAAAD5/xUAAAABAAAAAAD4/xUAAAABAAAAAAD3/xUAAAABAAAAAAD2/xUAAAABAAAAAAD1/xUAAAABAAAAAAD0/xUAAAABAAAAAADz/xUAAAABAAAAAADy/xUAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_4jce7")
+
+[node name="House" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="9" unique_id=1512213927 instance=ExtResource("11_6u4a0")]
+position = Vector2(-6235, 6542)
+rotation = -1.865757
+
+[node name="SteamVent" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="10" unique_id=864225112 instance=ExtResource("12_oe17f")]
+position = Vector2(642, 517)
+
+[node name="LightFanAnimation" parent="Ground" parent_id_path=PackedInt32Array(679506332) index="11" unique_id=2116551376 instance=ExtResource("13_lbwx5")]
+position = Vector2(-6026, 4488)
+autoplay = "default"
+frame_progress = 0.7676356
+
+[node name="Gate" parent="." index="1" unique_id=333303592 instance=ExtResource("14_xqqjy")]
+position = Vector2(364, -817)
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." index="2" unique_id=1810333965]
+position = Vector2(864, 621)
+
+[node name="Drone" parent="." index="3" unique_id=541355805 instance=ExtResource("15_ex6t8")]
+position = Vector2(127, 540)
+
+[node name="Moon" type="DirectionalLight2D" parent="." index="4" unique_id=88701138]
+energy = 0.35
+blend_mode = 1
+
+[node name="Toilet" parent="." index="7" unique_id=1180036368 instance=ExtResource("17_bjulg")]
+position = Vector2(398, 391)
+
+[node name="Box" parent="." index="8" unique_id=1791769960 instance=ExtResource("18_gd7nx")]
+position = Vector2(1040, 422)
+
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
+[connection signal="player_entered" from="Gate" to="." method="_on_gate_player_entered"]
+[connection signal="player_exited" from="Gate" to="." method="_on_gate_player_exited"]
