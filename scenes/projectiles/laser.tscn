@@ -8,6 +8,8 @@ radius = 7.0
 height = 162.0
 
 [node name="laser" type="Area2D" unique_id=1450793882]
+collision_layer = 8
+collision_mask = 22
 script = ExtResource("1_o20vo")
 speed = 1000.0
 
@@ -18,3 +20,10 @@ shape = SubResource("CapsuleShape2D_lhggc")
 [node name="Blue" type="Sprite2D" parent="." unique_id=1393270166]
 rotation = 1.5707964
 texture = ExtResource("2_e6ads")
+
+[node name="TTL" type="Timer" parent="." unique_id=1010506163]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="TTL" to="." method="_on_ttl_timeout"]
