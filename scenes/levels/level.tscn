@@ -20,5 +20,7 @@ zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
+[node name="Lights" type="Node2D" parent="." unique_id=1560551235]
+
 [connection signal="grenade_shot" from="Player" to="." method="_on_player_grenade_shot"]
 [connection signal="projectile_shot" from="Player" to="." method="_on_player_projectile_shot"]

@@ -203,7 +203,6 @@ animations = [{
 }]
 
 [node name="LightFanAnimation" type="AnimatedSprite2D" unique_id=2116551376]
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_uj20q")
 frame_progress = 0.45581976
 
