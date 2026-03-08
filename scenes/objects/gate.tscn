@@ -24,7 +24,6 @@ polygon = PackedVector2Array(-1439, -788, -1440, 544, -1415, 632, -1338, 729, -1
 collision_layer = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1821272015]
-visible = false
 position = Vector2(203.5, 941.5)
 shape = SubResource("RectangleShape2D_300j1")
 

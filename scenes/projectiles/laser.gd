@@ -26,5 +26,4 @@ func _on_body_entered(body):
 
 
 func _on_ttl_timeout():
-	print("I'm fading")
 	queue_free()

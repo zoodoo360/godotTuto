@@ -72,7 +72,7 @@ rotation = 1.5707964
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." index="3" unique_id=1810333965]
-position = Vector2(-1961, -126)
+position = Vector2(-3793, 566)
 metadata/_edit_group_ = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Player" index="9" unique_id=2128941906]
@@ -131,6 +131,7 @@ metadata/_edit_lock_ = true
 
 [node name="ExitGateArea" type="Area2D" parent="." index="6" unique_id=1570796021]
 position = Vector2(-3629, 445)
+collision_layer = 16
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0" unique_id=1661600577]

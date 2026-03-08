@@ -1,9 +1,7 @@
 extends LevelParent
 
-
 func _on_gate_player_entered():
-	print("I'm in")
-
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/levels/inside.tscn")
 
 func _on_gate_player_exited():
 	print("Forgot something")
