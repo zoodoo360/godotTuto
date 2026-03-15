@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dshlgkjnm10av"]
+
+[ext_resource type="Texture2D" uid="uid://dhdm1dqvyndg" path="res://assets/graphics/ui/grenade.png" id="1_5nlf0"]
+[ext_resource type="Texture2D" uid="uid://bft6d8lthyl5q" path="res://assets/graphics/ui/bullet.png" id="1_b2pox"]
+[ext_resource type="Script" uid="uid://c8cs8wo52n6ge" path="res://scenes/user interface/ui.gd" id="1_klrxq"]
+[ext_resource type="Theme" uid="uid://hejrclc0f62b" path="res://scenes/user interface/main_theme.tres" id="1_s8vjj"]
+[ext_resource type="Texture2D" uid="uid://by5cxwq8hpchw" path="res://assets/graphics/ui/progress_bar/bg.png" id="4_x14l5"]
+[ext_resource type="Texture2D" uid="uid://ot7caoujhreh" path="res://assets/graphics/ui/progress_bar/over.png" id="5_klrxq"]
+[ext_resource type="Texture2D" uid="uid://coow3m7p63763" path="res://assets/graphics/ui/progress_bar/progress.png" id="6_pf5bn"]
+
+[node name="UI" type="CanvasLayer" unique_id=78915757]
+script = ExtResource("1_klrxq")
+
+[node name="AmmoCounter" type="GridContainer" parent="." unique_id=461955058]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -78.0
+offset_right = 105.0
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 2
+
+[node name="LaserContainer" type="VBoxContainer" parent="AmmoCounter" unique_id=124128935]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="AmmoCounter/LaserContainer" unique_id=59297004]
+layout_mode = 2
+theme = ExtResource("1_s8vjj")
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="AmmoCounter/LaserContainer" unique_id=636289307]
+layout_mode = 2
+texture = ExtResource("1_b2pox")
+expand_mode = 4
+
+[node name="GrenageContainer" type="VBoxContainer" parent="AmmoCounter" unique_id=1966324587]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="AmmoCounter/GrenageContainer" unique_id=103823336]
+layout_mode = 2
+theme = ExtResource("1_s8vjj")
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="AmmoCounter/GrenageContainer" unique_id=744489803]
+layout_mode = 2
+texture = ExtResource("1_5nlf0")
+expand_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=121907715]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -40.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PlayerHealth" type="TextureProgressBar" parent="MarginContainer" unique_id=885136400]
+layout_mode = 2
+value = 50.0
+texture_under = ExtResource("4_x14l5")
+texture_over = ExtResource("5_klrxq")
+texture_progress = ExtResource("6_pf5bn")

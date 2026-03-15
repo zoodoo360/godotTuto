@@ -9,9 +9,11 @@ func _process(_delta):
 
 func _on_player_projectile_shot(gunTransform:Transform2D, gunDirection:Vector2):
 	var laser:Laser = Laser.createInstance(gunTransform, gunDirection)
+	$UI.updateLaserCount()
 	$Clip.add_child(laser)
 
 
 func _on_player_grenade_shot(gunTransform, gunDirection):
 	var grenade:Grenade = Grenade.createInstance(gunTransform, gunDirection)
+	$UI.updateGrenadeCount()
 	$GrenadePouch.add_child(grenade)

@@ -44,12 +44,14 @@ func characterRotation():
 		#rotation += clamp(rotationSpeed, 0, abs(theta)) * sign(theta)
 
 func shootLaser() -> void:
+	Globals.laser_amount -= 1
 	projectile_shot.emit($GunTip.global_transform, aimDirection)
 	$GPUParticles2D.emitting = true
 	canShootBullet = false
 	$ShootTimer.start()
 
 func shootGrenade() -> void:
+	Globals.grenade_amount -= 1
 	grenade_shot.emit($GunTip.global_transform, aimDirection)
 	canShootGrenade = false
 	$GrenadeTimer.start()
@@ -81,11 +83,11 @@ func aimDirectionInputs():
 	characterRotation()
 
 func laserInput():
-	if (Input.is_action_pressed("mouseShoot") or Input.is_action_pressed("controllerShoot")) and canShootBullet:
+	if (Input.is_action_pressed("mouseShoot") or Input.is_action_pressed("controllerShoot")) and canShootBullet and Globals.laser_amount > 0:
 		shootLaser()
 
 func grenadeInput():
-	if (Input.is_action_pressed("mouseGrenade") or Input.is_action_pressed("controllerGrenade")) and canShootGrenade:
+	if (Input.is_action_pressed("mouseGrenade") or Input.is_action_pressed("controllerGrenade")) and canShootGrenade and Globals.grenade_amount > 0:
 		shootGrenade()
 
 func _on_shoot_timer_timeout():

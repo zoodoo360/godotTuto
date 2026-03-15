@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cwlcr2d3xgpcx"]
 
 [ext_resource type="Script" uid="uid://dmyc7w63744qs" path="res://scenes/levels/level.gd" id="1_cmnwa"]
+[ext_resource type="PackedScene" uid="uid://dshlgkjnm10av" path="res://scenes/user interface/ui.tscn" id="3_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://d36vhmh2po56y" path="res://scenes/player/player.tscn" id="4_giuic"]
 
 [node name="Level" type="Node2D" unique_id=1977749430]
@@ -21,6 +22,8 @@ position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 
 [node name="Lights" type="Node2D" parent="." unique_id=1560551235]
+
+[node name="UI" parent="." unique_id=78915757 instance=ExtResource("3_b2cq8")]
 
 [connection signal="grenade_shot" from="Player" to="." method="_on_player_grenade_shot"]
 [connection signal="projectile_shot" from="Player" to="." method="_on_player_projectile_shot"]
