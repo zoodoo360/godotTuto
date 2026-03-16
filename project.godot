@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*uid://xoanfcnxojcn"
+TransitionLayer="*uid://bh6l8noadwmhc"
 
 [display]
 
