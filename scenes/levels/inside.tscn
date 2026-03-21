@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b2o2861r4nyeb" path="res://assets/graphics/lights/overlays/infrastructure.png" id="6_xanyd"]
 [ext_resource type="Texture2D" uid="uid://frd5wqyuu5wq" path="res://assets/graphics/lights/textures/circle.png" id="7_tkhku"]
 [ext_resource type="Texture2D" uid="uid://dp5pyp4nq1f7x" path="res://assets/graphics/lights/overlays/lattice.png" id="8_6serm"]
+[ext_resource type="PackedScene" uid="uid://ddoohjjt7l6db" path="res://scenes/items/item.tscn" id="12_7r4nv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkhku"]
 size = Vector2(312.75, 1166)
@@ -81,6 +82,7 @@ texture = ExtResource("7_tkhku")
 
 [node name="Lights" parent="." index="4" unique_id=1560551235]
 metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" unique_id=2116551376 instance=ExtResource("5_086xj")]
 position = Vector2(-3204, 555)
@@ -137,5 +139,8 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGateArea" index="0" unique_id=1661600577]
 position = Vector2(-538.625, 137)
 shape = SubResource("RectangleShape2D_tkhku")
+
+[node name="Item" parent="." index="8" unique_id=146859133 instance=ExtResource("12_7r4nv")]
+position = Vector2(-327, -251)
 
 [connection signal="body_entered" from="ExitGateArea" to="." method="_on_exit_gate_area_body_entered"]

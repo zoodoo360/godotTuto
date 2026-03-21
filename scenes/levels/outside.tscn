@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://cwlcr2d3xgpcx" path="res://scenes/levels/level.tscn" id="1_2s4ok"]
 [ext_resource type="Texture2D" uid="uid://cq2a5cfw0gmv2" path="res://assets/graphics/ground/stones.png" id="2_qvsb0"]
 [ext_resource type="Script" uid="uid://d07bsg73s0mjv" path="res://scripts/outside.gd" id="2_x30qc"]
-[ext_resource type="PackedScene" uid="uid://woh2bwtu706x" path="res://scenes/levels/inside.tscn" id="3_gd7nx"]
 [ext_resource type="Texture2D" uid="uid://1kj8jvb5mled" path="res://assets/graphics/decals/dirt_patch.png" id="3_xqqjy"]
 [ext_resource type="Texture2D" uid="uid://d3jlk1e4wedrb" path="res://assets/graphics/decals/moss/moss_1.png" id="4_ex6t8"]
 [ext_resource type="Texture2D" uid="uid://dxt4bbdnd8jpa" path="res://assets/graphics/decals/moss/moss_2.png" id="5_x30qc"]
@@ -19,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://b2j78yx2cl57s" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
 [ext_resource type="PackedScene" uid="uid://b7wpfj273xwue" path="res://scenes/objects/toilet.tscn" id="17_bjulg"]
 [ext_resource type="PackedScene" uid="uid://diefd8ol2iqqc" path="res://scenes/objects/crate.tscn" id="18_gd7nx"]
+[ext_resource type="PackedScene" uid="uid://ddoohjjt7l6db" path="res://scenes/items/item.tscn" id="19_gd7nx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddemh"]
 texture = ExtResource("9_4lnny")
@@ -57,7 +57,6 @@ sources/0 = SubResource("TileSetAtlasSource_2ngmq")
 
 [node name="Outside" unique_id=1977749430 instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_x30qc")
-insideScene = ExtResource("3_gd7nx")
 
 [node name="Ground" parent="." index="0" unique_id=679506332]
 metadata/_edit_group_ = true
@@ -135,6 +134,15 @@ position = Vector2(398, 391)
 
 [node name="Box" parent="." index="8" unique_id=1791769960 instance=ExtResource("18_gd7nx")]
 position = Vector2(1040, 422)
+
+[node name="Item" parent="." index="10" unique_id=146859133 instance=ExtResource("19_gd7nx")]
+position = Vector2(975, 642)
+
+[node name="Item2" parent="." index="11" unique_id=1722227744 instance=ExtResource("19_gd7nx")]
+position = Vector2(1135, 642)
+
+[node name="Item3" parent="." index="12" unique_id=654750691 instance=ExtResource("19_gd7nx")]
+position = Vector2(790, 642)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
