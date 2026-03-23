@@ -33,6 +33,10 @@ window/size/viewport_height=720
 
 project/assembly_name="TutoShooter"
 
+[global_group]
+
+Container=""
+
 [input]
 
 DUp={

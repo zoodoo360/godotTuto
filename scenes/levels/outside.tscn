@@ -126,14 +126,16 @@ position = Vector2(127, 540)
 energy = 0.35
 blend_mode = 1
 
-[node name="Player" parent="." index="6" unique_id=1810333965]
-position = Vector2(532, 389)
+[node name="Box" parent="." index="6" unique_id=1791769960 instance=ExtResource("18_gd7nx")]
+position = Vector2(1040, 422)
+rotation = 1.5707964
 
 [node name="Toilet" parent="." index="7" unique_id=1180036368 instance=ExtResource("17_bjulg")]
-position = Vector2(398, 391)
+position = Vector2(364, 605)
+rotation = -3.1415925
 
-[node name="Box" parent="." index="8" unique_id=1791769960 instance=ExtResource("18_gd7nx")]
-position = Vector2(1040, 422)
+[node name="Player" parent="." index="9" unique_id=1810333965]
+position = Vector2(532, 389)
 
 [node name="Item" parent="." index="10" unique_id=146859133 instance=ExtResource("19_gd7nx")]
 position = Vector2(975, 642)

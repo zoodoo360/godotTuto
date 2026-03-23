@@ -18,10 +18,33 @@ script = ExtResource("2_tf0hf")
 position = Vector2(0.25, 2.5)
 shape = SubResource("RectangleShape2D_vfogt")
 
-[node name="Sprite2D2" type="Sprite2D" parent="." index="1" unique_id=1339585966]
-position = Vector2(0.9999998, 7.9999986)
-scale = Vector2(0.9999998, 0.9999998)
+[node name="BaseSprite" parent="." index="1" unique_id=1011652850]
+texture = ExtResource("3_fjwrh")
+
+[node name="LidSprite" parent="." index="2" unique_id=2079359588]
+position = Vector2(0, 2)
 texture = ExtResource("4_e81tp")
 
-[node name="Sprite2D" parent="." index="2" unique_id=1011652850]
-texture = ExtResource("3_fjwrh")
+[node name="Marker2D" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="0" unique_id=1294356600]
+position = Vector2(-145.71426, -48.571426)
+
+[node name="Marker2D2" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="1" unique_id=440769774]
+position = Vector2(-67.14285, 11.428571)
+
+[node name="Marker2D3" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="2" unique_id=1709656825]
+position = Vector2(-69.99999, -28.571426)
+
+[node name="Marker2D4" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="3" unique_id=1177856208]
+position = Vector2(141.42856, 28.571426)
+
+[node name="Marker2D5" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="4" unique_id=1209310954]
+position = Vector2(142.85713, -42.85714)
+
+[node name="Marker2D6" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="5" unique_id=259998370]
+position = Vector2(-147.14285, 19.999998)
+
+[node name="Marker2D7" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="6" unique_id=1113146059]
+position = Vector2(65.71428, -32.85714)
+
+[node name="Marker2D8" type="Marker2D" parent="SpawnPositions" parent_id_path=PackedInt32Array(559963041) index="7" unique_id=1578597217]
+position = Vector2(65.71428, 10.000003)

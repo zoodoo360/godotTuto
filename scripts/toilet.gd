@@ -1,5 +1,4 @@
 extends ItemContainer
 
-
-func gotHit() -> void:
-	print("Toilet")
+func _ready() -> void:
+	count = 1

@@ -13,6 +13,8 @@ script = ExtResource("1_cmnwa")
 
 [node name="Clip" type="Node2D" parent="." unique_id=1463413638]
 
+[node name="Orbs" type="Node2D" parent="." unique_id=1863092011]
+
 [node name="Player" parent="." unique_id=1810333965 instance=ExtResource("4_giuic")]
 position = Vector2(380, 382)
 
