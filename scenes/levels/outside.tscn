@@ -16,9 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cnu4yptv4qwcq" path="res://scenes/objects/lighFanAnimation.tscn" id="13_lbwx5"]
 [ext_resource type="PackedScene" uid="uid://dwhm0i20rmh1f" path="res://scenes/objects/gate.tscn" id="14_xqqjy"]
 [ext_resource type="PackedScene" uid="uid://b2j78yx2cl57s" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
-[ext_resource type="PackedScene" uid="uid://b7wpfj273xwue" path="res://scenes/objects/toilet.tscn" id="17_bjulg"]
-[ext_resource type="PackedScene" uid="uid://diefd8ol2iqqc" path="res://scenes/objects/crate.tscn" id="18_gd7nx"]
-[ext_resource type="PackedScene" uid="uid://ddoohjjt7l6db" path="res://scenes/items/item.tscn" id="19_gd7nx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddemh"]
 texture = ExtResource("9_4lnny")
@@ -126,25 +123,8 @@ position = Vector2(127, 540)
 energy = 0.35
 blend_mode = 1
 
-[node name="Box" parent="." index="6" unique_id=1791769960 instance=ExtResource("18_gd7nx")]
-position = Vector2(1040, 422)
-rotation = 1.5707964
-
-[node name="Toilet" parent="." index="7" unique_id=1180036368 instance=ExtResource("17_bjulg")]
-position = Vector2(364, 605)
-rotation = -3.1415925
-
-[node name="Player" parent="." index="9" unique_id=1810333965]
-position = Vector2(532, 389)
-
-[node name="Item" parent="." index="10" unique_id=146859133 instance=ExtResource("19_gd7nx")]
-position = Vector2(975, 642)
-
-[node name="Item2" parent="." index="11" unique_id=1722227744 instance=ExtResource("19_gd7nx")]
-position = Vector2(1135, 642)
-
-[node name="Item3" parent="." index="12" unique_id=654750691 instance=ExtResource("19_gd7nx")]
-position = Vector2(790, 642)
+[node name="Player" parent="." index="7" unique_id=1810333965]
+position = Vector2(-4744, 3953)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]

@@ -7,7 +7,11 @@
 [node name="Level" type="Node2D" unique_id=1977749430]
 script = ExtResource("1_cmnwa")
 
+[node name="Decals" type="Node2D" parent="." unique_id=560250185]
+
 [node name="Ground" type="Node2D" parent="." unique_id=679506332]
+
+[node name="Infestation" type="Node2D" parent="." unique_id=1921268374]
 
 [node name="GrenadePouch" type="Node2D" parent="." unique_id=664709033]
 
