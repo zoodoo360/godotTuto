@@ -4,9 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://bqp7naqr4nlk5" path="res://assets/graphics/player/player.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://d3g6q6krdu0ah" path="res://assets/graphics/decals/white.png" id="3_gmlin"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmlin"]
-size = Vector2(78, 22)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_xdhsk"]
 radius = 56.008926
 
@@ -23,7 +20,7 @@ color = Color(0.5803922, 0.972549, 1, 0.20392157)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gmlin"]
 polygon = PackedVector2Array(36, -61, -2, -58, -31, -44, -47, -14, -43, 17, -30, 40, -21, 54, 11, 61, 42, 47, 59, 43, 72, 52, 100, 56, 115, 45, 125, 39, 142, 34, 150, 16, 148, 3, 129, -5, 102, -11, 78, -21, 59, -37)
 
-[node name="Player" type="CharacterBody2D" unique_id=276882780]
+[node name="Player" type="CharacterBody2D" unique_id=276882780 groups=["Player"]]
 collision_mask = 31
 script = ExtResource("1_i6jq0")
 
@@ -32,13 +29,7 @@ position = Vector2(50, 0)
 rotation = 1.5707964
 texture = ExtResource("2_dovo2")
 
-[node name="GunCollision" type="CollisionShape2D" parent="." unique_id=2008201576]
-visible = false
-position = Vector2(107, 19)
-shape = SubResource("RectangleShape2D_gmlin")
-metadata/_edit_lock_ = true
-
-[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=1745159648]
+[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=1745159648 groups=["Player"]]
 position = Vector2(11, -1)
 shape = SubResource("CircleShape2D_xdhsk")
 

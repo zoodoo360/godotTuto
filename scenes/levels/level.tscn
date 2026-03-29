@@ -19,11 +19,13 @@ script = ExtResource("1_cmnwa")
 
 [node name="Orbs" type="Node2D" parent="." unique_id=1863092011]
 
+[node name="Enemies" type="Node2D" parent="." unique_id=29350504]
+
 [node name="Player" parent="." unique_id=1810333965 instance=ExtResource("4_giuic")]
 position = Vector2(380, 382)
 
 [node name="PlayerCam" type="Camera2D" parent="Player" unique_id=1175808773]
-zoom = Vector2(0.5, 0.5)
+zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 metadata/_edit_lock_ = true
 

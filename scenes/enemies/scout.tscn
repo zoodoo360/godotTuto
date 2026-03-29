@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://wtl6k5ft8yd4"]
+
+[ext_resource type="Texture2D" uid="uid://daci3hp57t64t" path="res://assets/graphics/enemies/scout.png" id="1_i70sm"]
+[ext_resource type="Script" uid="uid://dx605bxc0lxom" path="res://scenes/enemies/scout.gd" id="1_ns734"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ns734"]
+radius = 46.0
+height = 101.333336
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ns734"]
+radius = 595.37854
+
+[node name="Scout" type="CharacterBody2D" unique_id=42343286]
+scale = Vector2(1.5, 1.5)
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_ns734")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=309284672]
+position = Vector2(29, -4)
+rotation = 1.5707964
+texture = ExtResource("1_i70sm")
+region_enabled = true
+region_rect = Rect2(0, 0, 173, 223)
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1787216820]
+position = Vector2(-4.666667, 1.3333335)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_ns734")
+
+[node name="Vision" type="Area2D" parent="." unique_id=430531293]
+visible = false
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vision" unique_id=1137801258]
+shape = SubResource("CircleShape2D_ns734")
+
+[node name="LaserSpawns" type="Node2D" parent="." unique_id=491472960]
+
+[node name="LeftGunTip" type="Marker2D" parent="LaserSpawns" unique_id=701686902]
+unique_name_in_owner = true
+position = Vector2(108, -30)
+
+[node name="LeftGunRear" type="Marker2D" parent="LaserSpawns" unique_id=519596426]
+unique_name_in_owner = true
+position = Vector2(65.333, -30)
+
+[node name="RightGunTip" type="Marker2D" parent="LaserSpawns" unique_id=1184512989]
+unique_name_in_owner = true
+position = Vector2(120, 10)
+
+[node name="RightGunRear" type="Marker2D" parent="LaserSpawns" unique_id=31872172]
+unique_name_in_owner = true
+position = Vector2(70, 10)
+
+[node name="LaserCooldown" type="Timer" parent="." unique_id=939471949]
+wait_time = 0.5
+
+[connection signal="body_entered" from="Vision" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Vision" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="LaserCooldown" to="." method="_on_laser_cooldown_timeout"]

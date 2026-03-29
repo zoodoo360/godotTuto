@@ -30,6 +30,7 @@ func _process(_delta):
 
 func _physics_process(_delta):
 	moveCharacter()
+	Globals.playerPosition = global_position
 
 func moveCharacter():
 	velocity =  moveSpeed * moveDirection

@@ -36,6 +36,8 @@ project/assembly_name="TutoShooter"
 [global_group]
 
 Container=""
+Player=""
+Scouts=""
 
 [input]
 

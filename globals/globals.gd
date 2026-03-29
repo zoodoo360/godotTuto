@@ -16,5 +16,7 @@ var health:int = 60:
 	set(value):
 		health = value
 		stats_changed.emit()
+
+var playerPosition:Vector2
 		
 		

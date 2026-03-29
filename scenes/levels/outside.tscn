@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cnu4yptv4qwcq" path="res://scenes/objects/lighFanAnimation.tscn" id="13_lbwx5"]
 [ext_resource type="PackedScene" uid="uid://dwhm0i20rmh1f" path="res://scenes/objects/gate.tscn" id="14_xqqjy"]
 [ext_resource type="PackedScene" uid="uid://b2j78yx2cl57s" path="res://scenes/enemies/drone.tscn" id="15_ex6t8"]
+[ext_resource type="PackedScene" uid="uid://wtl6k5ft8yd4" path="res://scenes/enemies/scout.tscn" id="17_uaeil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ddemh"]
 texture = ExtResource("9_4lnny")
@@ -55,7 +56,15 @@ sources/0 = SubResource("TileSetAtlasSource_2ngmq")
 [node name="Outside" unique_id=1977749430 instance=ExtResource("1_2s4ok")]
 script = ExtResource("2_x30qc")
 
-[node name="Ground" parent="." index="0" unique_id=679506332]
+[node name="Decals" parent="." index="0" unique_id=560250185]
+z_index = -1
+
+[node name="Gate" parent="." index="1" unique_id=333303592 instance=ExtResource("14_xqqjy")]
+position = Vector2(364, -817)
+metadata/_edit_lock_ = true
+
+[node name="Ground" parent="." index="2" unique_id=679506332]
+z_index = -2
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
@@ -112,10 +121,6 @@ position = Vector2(-6026, 4488)
 autoplay = "default"
 frame_progress = 0.7676356
 
-[node name="Gate" parent="." index="1" unique_id=333303592 instance=ExtResource("14_xqqjy")]
-position = Vector2(364, -817)
-metadata/_edit_lock_ = true
-
 [node name="Drone" parent="." index="3" unique_id=541355805 instance=ExtResource("15_ex6t8")]
 position = Vector2(127, 540)
 
@@ -123,10 +128,13 @@ position = Vector2(127, 540)
 energy = 0.35
 blend_mode = 1
 
-[node name="Player" parent="." index="7" unique_id=1810333965]
-position = Vector2(-4744, 3953)
+[node name="Scout" parent="Enemies" parent_id_path=PackedInt32Array(29350504) index="0" unique_id=42343286 groups=["Scouts"] instance=ExtResource("17_uaeil")]
+position = Vector2(1097, 873)
 
-[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
-[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
+[node name="Player" parent="." index="10" unique_id=1810333965]
+position = Vector2(545, 1005)
+
 [connection signal="player_entered" from="Gate" to="." method="_on_gate_player_entered"]
 [connection signal="player_exited" from="Gate" to="." method="_on_gate_player_exited"]
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
