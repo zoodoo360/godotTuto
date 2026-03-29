@@ -115,6 +115,7 @@ rotation = -1.865757
 
 [node name="SteamVent" parent="Ground" index="10" unique_id=864225112 instance=ExtResource("12_oe17f")]
 position = Vector2(642, 517)
+collision_layer = 16
 
 [node name="LightFanAnimation" parent="Ground" index="11" unique_id=2116551376 instance=ExtResource("13_lbwx5")]
 position = Vector2(-6026, 4488)

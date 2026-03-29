@@ -19,7 +19,6 @@ func _on_player_projectile_shot(gunTransform:Transform2D, gunDirection:Vector2) 
 
 func _on_scout_projectile_shot(gunTransform:Transform2D, gunDirection:Vector2) ->void:
 	var laser:Laser = Laser.createInstance(gunTransform, gunDirection)
-	print("laser created")
 	$Clip.add_child(laser)
 
 
